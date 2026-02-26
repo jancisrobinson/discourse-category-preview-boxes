@@ -1,6 +1,9 @@
 import { apiInitializer } from "discourse/lib/api";
 
 export default apiInitializer((api) => {
+  // Only show previews to anonymous/guest users
+  if (api.getCurrentUser()) return;
+
   // Parse the category_previews setting
   // Discourse list type uses | between entries; each entry uses ~ between fields
   // Format: slug~Display Name~Description~Color~Logo URL~Position
@@ -180,6 +183,7 @@ export default apiInitializer((api) => {
   });
 
   if (
+    window.location.pathname === "/" ||
     window.location.pathname === "/categories" ||
     window.location.pathname === "/categories/"
   ) {
