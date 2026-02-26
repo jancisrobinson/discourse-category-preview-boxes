@@ -64,8 +64,10 @@ export default apiInitializer((api) => {
           '</div>' +
         '</div>';
     } else {
+      const abbr = preview.name.slice(0, 2);
       logoHTML =
-        '<div class="category-logo" style="background-color: #' + preview.color + ';">' +
+        '<div class="category-logo no-logo-present" style="background-color: #' + preview.color + ';">' +
+          '<span class="category-abbreviation">' + abbr + '</span>' +
         '</div>';
     }
 
