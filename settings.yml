@@ -1,0 +1,36 @@
+category_previews:
+  type: list
+  list_type: simple
+  default: ""
+  description: |
+    Define preview categories visible to anonymous users and non-members.
+    Each entry uses tilde (~) separated values:
+    slug~Display Name~Description~Color (hex without #)~Logo URL~Position
+
+    Position is the 1-based display order among all categories (real + preview).
+    For example if Article Discussions should be 1st and Wine Talk 2nd:
+    wine-talk~Wine Talk~Discuss wines.~9EB83B~~2
+
+    If Position is empty or 0, the preview appends at the end.
+
+    Examples:
+    wine-recommendations~Wine recommendations~Share favourites.~840976~~2
+    tasting-notes~Tasting Notes~Compare tasting experiences.~8B0000~~3
+
+preview_message_html:
+  type: string
+  default: "This area is for members only. <a href='https://www.jancisrobinson.com/membership'>Become a member</a> or <a href='https://www.jancisrobinson.com/login'>log in</a> to continue reading."
+  description: |
+    HTML message shown when a guest clicks a preview category.
+    You can include links to your membership and login pages.
+
+membership_url:
+  type: string
+  default: "https://www.jancisrobinson.com/membership"
+  description: |
+    URL to your membership/signup page on the main site.
+
+show_lock_icon:
+  type: bool
+  default: true
+  description: "Show a lock icon on preview category boxes to indicate restricted access."

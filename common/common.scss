@@ -1,0 +1,61 @@
+/* Category Preview Boxes */
+
+.category-preview-box {
+  cursor: pointer;
+  position: relative;
+  opacity: 0.88;
+  transition: opacity 0.2s ease;
+}
+
+.category-preview-box:hover {
+  opacity: 1;
+}
+
+/* "Members" badge */
+.category-preview-badge {
+  display: inline-block;
+  font-size: 0.7em;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: var(--primary-low);
+  color: var(--primary-medium);
+  margin-left: 8px;
+  vertical-align: middle;
+  font-weight: normal;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+/* Message shown on click */
+.category-preview-message {
+  display: none;
+  padding: 10px 15px;
+  background: var(--tertiary-low);
+  border-left: 3px solid var(--tertiary);
+  color: var(--primary);
+  font-size: 0.9em;
+  margin: 8px 0 4px;
+  border-radius: 0 4px 4px 0;
+  animation: fadeInPreview 0.3s ease;
+}
+
+.category-preview-message.visible {
+  display: block;
+}
+
+.category-preview-message a {
+  color: var(--tertiary);
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+@keyframes fadeInPreview {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
